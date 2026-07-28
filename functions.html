@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Function Practice</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Min function</h1>
+        <label for="min-a">First number</label>
+        <input id="min-a" type="number">
+        <label for="min-b">Second Number</label>
+        <input id="min-b" type="number">
+        
+    </div>
+    <div class="buttons">
+        <button id="min-btn">Find min</button>
+    </div>
+    <div id="result"></div>
+    
+</body>
+<script>
+    function getMin(a,b){
+        return a < b ? a : b;
+    }
+
+    function test(){
+        console.log("hello")
+    }
+
+    function showResult(){
+        const num1 = document.querySelector("#min-a").value;
+        const num2 = document.querySelector("#min-b").value;
+        const min = getMin(num1, num2);
+        const power = getPower(num1, num2)
+        document.querySelector("#result").innerHTML = `
+        <p> The min of ${num1} and ${num2} is ${min}</p>
+        <p> ${num1} raised to the ${num2} power: ${power}</p>
+        `
+    }
+
+    const minBtn = document.querySelector("#min-btn")
+    minBtn.addEventListener('click', showResult)
+    
+    function getPower(base, exp){
+        return base ** exp;
+    }
+    
+    
+</script>
+</html>
